@@ -25,10 +25,12 @@ public class BurrowsWheeler {
             BinaryStdOut.write(originalStringIndex);
             for (int i = 0; i < suffixArray.length(); i++) {
                 int originalSuffixIndex = suffixArray.index(i);
-                if (originalSuffixIndex == 0)
+                if (originalSuffixIndex == 0) {
                     BinaryStdOut.write(text.charAt(text.length() - 1));
-                else
+                }
+                else {
                     BinaryStdOut.write(text.charAt(originalSuffixIndex - 1));
+                }
             }
         }
         BinaryStdOut.close();
@@ -95,9 +97,11 @@ public class BurrowsWheeler {
      * if args[0] is "+", apply Burrows-Wheeler inverse transform
      */
     public static void main(String[] args) {
-        if (args[0].equals("-"))
+        if (args[0].equals("-")) {
             BurrowsWheeler.transform();
-        else if (args[0].equals("+"))
+        }
+        else if (args[0].equals("+")) {
             BurrowsWheeler.inverseTransform();
+        }
     }
 }
