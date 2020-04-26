@@ -6,8 +6,10 @@ import edu.princeton.cs.algs4.BinaryStdOut;
 public class BurrowsWheeler {
     private static final int ASCII_RADIX = 256;
 
-    // apply Burrows-Wheeler transform,
-    // reading from standard input and writing to standard output
+    /**
+     * Apply Burrows-Wheeler transform,
+     * reading from standard input and writing to standard output.
+     */
     public static void transform() {
         while (!BinaryStdIn.isEmpty()) {
             String text = BinaryStdIn.readString();
@@ -32,8 +34,10 @@ public class BurrowsWheeler {
         BinaryStdOut.close();
     }
 
-    // apply Burrows-Wheeler inverse transform,
-    // reading from standard input and writing to standard output
+    /**
+     * Apply Burrows-Wheeler inverse transform,
+     * reading from standard input and writing to standard output
+     */
     public static void inverseTransform() {
         while (!BinaryStdIn.isEmpty()) {
             int originalStringIndex = BinaryStdIn.readInt();
@@ -86,8 +90,10 @@ public class BurrowsWheeler {
         BinaryStdOut.close();
     }
 
-    // if args[0] is "-", apply Burrows-Wheeler transform
-    // if args[0] is "+", apply Burrows-Wheeler inverse transform
+    /**
+     * if args[0] is "-", apply Burrows-Wheeler transform
+     * if args[0] is "+", apply Burrows-Wheeler inverse transform
+     */
     public static void main(String[] args) {
         if (args[0].equals("-"))
             BurrowsWheeler.transform();

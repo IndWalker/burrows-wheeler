@@ -2,11 +2,17 @@ package src;
 
 import java.util.Arrays;
 
+/**
+ * Circular suffix array data structure implementation.
+ * Critical component of Burrows-Wheeler transform.
+ */
 public class CircularSuffixArray {
 
     private CircularSuffix[] circularSuffixes;
 
-    // circular suffix array of s
+    /**
+     * Circular suffix array of string s creation.
+     */
     public CircularSuffixArray(String s) {
         if (s == null)
             throw new IllegalArgumentException("Constuctor argument must not be null");
@@ -18,12 +24,16 @@ public class CircularSuffixArray {
         Arrays.sort(circularSuffixes);
     }
 
-    // length of s
+    /**
+     * Length of string s.
+     */
     public int length() {
         return circularSuffixes.length;
     }
 
-    // returns index of ith sorted suffix
+    /**
+     * Returns index of ith sorted suffix.
+     */
     public int index(int i) {
         if (i < 0 || i > circularSuffixes.length - 1)
             throw new IllegalArgumentException("Suffix array index out of bounds");
