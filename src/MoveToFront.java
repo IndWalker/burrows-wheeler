@@ -33,16 +33,35 @@ public class MoveToFront {
         BinaryStdOut.close();
     }
 
-    // apply move-to-front decoding, reading from standard input and writing to standard output
+    /*
+     * Apply move-to-front decoding,
+     * reading from standard input and writing to standard output
+     */
     public static void decode() {
+        ArrayList<Character> extendedAscii = new ArrayList<>(RADIX);
+        for (int i = 0; i < RADIX; i++) {
+            extendedAscii.add((char) (RADIX - 1 - i));
+        }
 
+        while (!BinaryStdIn.isEmpty()) {
+            int charCode = BinaryStdIn.readChar();
+            char decodedChar = extendedAscii.remove(RADIX - 1 - charCode);
+            BinaryStdOut.write(decodedChar);
+            extendedAscii.add(decodedChar);
+        }
+        BinaryStdOut.close();
     }
 
-    // if args[0] is "-", apply move-to-front encoding
-    // if args[0] is "+", apply move-to-front decoding
+    /*
+     * if args[0] is "-", apply move-to-front encoding
+     * if args[0] is "+", apply move-to-front decoding
+     */
     public static void main(String[] args) {
         if (args[0].equals("-")) {
             MoveToFront.encode();
+        }
+        else if (args[0].equals("+")) {
+            MoveToFront.decode();
         }
     }
 }
