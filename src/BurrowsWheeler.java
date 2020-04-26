@@ -4,7 +4,7 @@ import edu.princeton.cs.algs4.BinaryStdIn;
 import edu.princeton.cs.algs4.BinaryStdOut;
 
 public class BurrowsWheeler {
-    private static final int ASCII_RADIX = 256;
+    private static final int RADIX = 256;
 
     /**
      * Apply Burrows-Wheeler transform,
@@ -53,7 +53,7 @@ public class BurrowsWheeler {
              * count[i+1] is the count of character with i-th code.
              */
             int[] next = new int[transformedString.length()];
-            int[] count = new int[ASCII_RADIX + 1];
+            int[] count = new int[RADIX + 1];
             /*
              * Counting part
              */
